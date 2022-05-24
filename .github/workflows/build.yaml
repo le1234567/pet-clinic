@@ -1,4 +1,4 @@
-name: Docker Build and Release
+﻿name: Docker Build and Release
 on: [ push ]
 env:
 #### An dieser Stelle müssen eure persönlichen Umgebungsvariablen eingetragen werden
@@ -37,7 +37,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=le1234567_pet-clinic-example
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=le1234567_pet-clinic
     - name: Compile, build and push
       run: |
         heroku container:login 
